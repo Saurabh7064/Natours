@@ -5,4 +5,29 @@ Light green: #7ed56f
 Medium green: #55c57a
 Dark green: #28b485
 
-*/
+/*  */
+
+/*Browser adds default margin and padding to elements like H1 and othets
+To avoid those we have used margin and padding as 0 and border-box is added so that
+padding is not added to the total height and width of the element*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #777;
+}
+
+.header{
+    height: 95vw;
+    background-image: linear-gradient(to right bottom,#7ed56f,#28b485),url(../img/hero.jpg);
+    background-size: cover;
+    background-position: top;
+}
+
