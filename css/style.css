@@ -49,6 +49,7 @@ body {
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;                   /*Trick to put an inline-block element to the center*/                          
 }
 
 .heading-primary{
@@ -111,4 +112,17 @@ body {
         opacity: 1;
         transform: translate(0);
     }
+}
+
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+}
+
+.btn-white{
+    background-color: #fff;
+    color: #777;
 }
