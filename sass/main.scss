@@ -24,6 +24,8 @@ $color-primary-dark: #28b485;
 
 $color-grey-dark: #777;
 $color-white: #fff;
+$color-black: #000;
+
 
 html{
     font-size: 62.5%;
@@ -46,25 +48,27 @@ body {
     background-position: top;
     position: relative;
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-}
 
-.header__logo-box {
+    
+&__logo-box {
     position: absolute;
     top: 4rem;
     left: 4rem;
 }
 
-.header__logo {
+&__logo {
     height: 3.5rem;
 }
 
-.header__text-box {                              /*This block of code is the trick to put an item to the center*/
+&__text-box {                              /*This block of code is the trick to put an item to the center*/
     position: absolute;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;                   /*Trick to put an inline-block element to the center*/                          
 }
+}
+
 
 .heading-primary{
     color: $color-white;
@@ -72,29 +76,31 @@ body {
 
     backface-visibility: hidden; /*To remove shakiness*/
     margin-bottom: 6rem;;
+
+    &--main{
+        display: block;         /* To move an element down we can use block trick*/
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: 3.5rem;
+        animation-name: moveInLeft;
+        animation-duration: 1s;
+        animation-timing-function: ease-out; /*Make animation slower at the end,ease-in another example*/
+        /*
+        animation-delay: 3s;
+        animation-iteration-count: 3;
+        */
+    }
+    
+    &--sub{
+        display: block;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1.75rem;
+        animation: moveInRight 1s ease-out;
+    }
 }
 
-.heading-primary--main{
-    display: block;         /* To move an element down we can use block trick*/
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 3.5rem;
-    animation-name: moveInLeft;
-    animation-duration: 1s;
-    animation-timing-function: ease-out; /*Make animation slower at the end,ease-in another example*/
-    /*
-    animation-delay: 3s;
-    animation-iteration-count: 3;
-    */
-}
 
-.heading-primary--sub{
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.75rem;
-    animation: moveInRight 1s ease-out;
-}
 
 @keyframes moveInLeft{
     0% {
@@ -141,8 +147,10 @@ body {
     }
 }
 
-.btn:link,
-.btn:visited {
+.btn{
+
+    &:link,
+&:visited {
     text-transform: uppercase;
     text-decoration: none;
     padding: 1.5rem 4rem;
@@ -153,22 +161,33 @@ body {
     font-size: 1.6rem;
 }
 
-.btn:hover{
+&:hover{
     transform: translateY(-.3rem);
-    box-shadow: 0 1rem 2rem rgba(0,0,0,0.2);
+    box-shadow: 0 1rem 2rem rgba($color-black,.2);
+
+    
+&::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
 }
 
-.btn:active{
+&:active{
     transform: translateY(-.1rem);
-    box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.2);
+    box-shadow: 0 .5rem 1.5rem rgba($color-black,.2);
 }
 
-.btn--white{
+&--white{
     background-color: $color-white;
     color: $color-grey-dark;
+
+    
+&::after {
+    background-color: $color-white;
+}
 }
 
-.btn::after{
+&::after{
     content: "";
     display: inline-block;
     height: 100%;
@@ -181,16 +200,10 @@ body {
     transition: all .4s;
 }
 
-.btn--white::after {
-    background-color: $color-white;
-}
-
-.btn:hover::after {
-    transform: scaleX(1.4) scaleY(1.6);
-    opacity: 0;
-}
-
-.btn--animated{
+&--animated{ 
     animation: moveInButton .5s ease-out .75s;
     animation-fill-mode: backwards;                         /*Keyframes 0% will be applied first*/
 }
+
+}
+
