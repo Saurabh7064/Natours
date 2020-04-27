@@ -1,6 +1,5 @@
 .row{
     max-width: $grid-width;
-    background-color: #eee;
     margin: 0 auto;                                          //To put content in the center
 
     &:not(:last-child){                                     //As we don't want to add margin in last element so excluding last child           
@@ -10,7 +9,6 @@
     @include clearfix; 
 
     [class^="col-"] {                                        //^ is for any class that starts with col
-        background-color: orangered;
         float: left; 
 
         &:not(:last-child){                                    
