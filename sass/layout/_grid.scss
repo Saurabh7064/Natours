@@ -1,19 +1,6 @@
 .row{
     max-width: $grid-width;
     background-color: #eee;
-    margin: 0 auto;                                          //To put content in the center
-
-    &:not(:last-child){                                     //As we don't want to add margin in last element so excluding last child           
-        margin-bottom: $gutter-vertical;                   //So think how u wd have implemented,there is selector for everthing,So instead of using a hack using position element search google instead                                              
-    }
-
-    .col-1-of-2{
-        width: calc((100% - #{$gutter-horizontal}) / 2);
-        background-color: orangered;
-        float: left; 
-
-        &:not(:last-child){                                    
-            margin-right: $gutter-horizontal;                   
-        }
-    }
+    margin: 0 auto;                  //To put content in the center
+    //margin-bottom: $gutter-vertical;
 }
