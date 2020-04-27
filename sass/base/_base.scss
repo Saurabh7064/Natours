@@ -1,0 +1,24 @@
+/*
+/*  */
+
+/*Browser adds default margin and padding to elements like H1 and othets
+To avoid those we have used margin and padding as 0 and border-box is added so that
+padding is not added to the total height and width of the element*/
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+
+
+html{
+    //this defines what 1 rem is
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+}

@@ -1,0 +1,47 @@
+
+@keyframes moveInRight{
+    0% {
+        opacity: 0;
+        transform: translateX(10rem);  /*-ve makes it to move right in x axis*/
+    }
+
+    80% {
+        transform: translateX(-1rem); /*+ve makes it to move right in x axis*/
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+
+
+
+@keyframes moveInLeft{
+    0% {
+        opacity: 0;
+        transform: translateX(-10rem);  /*-ve makes it to move right in x axis*/
+    }
+
+    80% {
+        transform: translateX(1rem); /*+ve makes it to move right in x axis*/
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInButton{
+    0% {
+        opacity: 0;
+        transform: translateY(3rem);  /*-ve makes it to move right in x axis*/
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
