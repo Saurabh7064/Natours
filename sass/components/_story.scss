@@ -5,4 +5,20 @@
     background-color: $color-white;
     border-radius: 3px;
     padding: 6rem;
+    padding-left: 9rem;
+    font-size: $default-font-size;
+    //transform: skewX();
+
+    &__shape {
+        width: 15rem;
+        height: 15rem;
+        float: left;
+        shape-outside: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);
+        transform: translateX(-3rem);
+    }
+
+    &__img {
+        height: 100%;
+    }
 }
