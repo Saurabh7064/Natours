@@ -3,8 +3,16 @@
     margin: 0 auto;                                          //To put content in the center
 
     &:not(:last-child){                                     //As we don't want to add margin in last element so excluding last child           
-        margin-bottom: $gutter-vertical;                   //So think how u wd have implemented,there is selector for everthing,So instead of using a hack using position element search google instead                                              
+        margin-bottom: $gutter-vertical;                   //So think how u wd have implemented,there is selector for everthing,So instead of using a hack using position element search google instead                   
+        @include respond(tab-port) {
+            margin-bottom:  $gutter-vertical-small;
+        }                           
     }
+
+    @include respond(tab-port) {
+        margin-bottom:  50rem;
+        padding: 0 3rem;
+    } 
 
     @include clearfix; 
 
@@ -12,8 +20,17 @@
         float: left; 
 
         &:not(:last-child){                                    
-            margin-right: $gutter-horizontal;                   
-        }                                     
+            margin-right: $gutter-horizontal;       
+            
+            @include respond(tab-port) {
+                margin-right: 0;
+                margin-bottom: $gutter-vertical-small;
+            }
+        } 
+        
+        @include respond(tab-port) {
+            width: 100% !important;
+        }
 
     }
 
