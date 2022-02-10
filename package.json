@@ -19,6 +19,6 @@
   "homepage": "https://github.com/emosrb/Natours#readme",
   "dependencies": {},
   "devDependencies": {
-    "node-sass": "^4.14.0"
+    "node-sass": "^7.0.0"
   }
 }
